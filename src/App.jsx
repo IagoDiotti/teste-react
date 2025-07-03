@@ -1,34 +1,44 @@
 import './App.css'
+import { FaCat } from "react-icons/fa";
+
 
 function App() {
-  return <div className="h-screen flex items-center justify-center">
-             <button className= " uppercase bg-green-600  md:bg-red-600 p-3  text-center rounded-full ">Me clique-me</button>
-             <form action="https://getform.io/f/bjjoxwgb" method="POST">
-  <input type="text" name="name" />
-  <input type="email" name="email" />
-  <input type="text" name="message" />
-  {/* add hidden Honeypot input to prevent spams */}
-  <input type="hidden" name="_gotcha" style={{ display: "none !important" }} />
-  {/* checkbox handle */}
-  <input
-    type="checkbox"
-    name="subscribe"
-    defaultValue="yes"
-    defaultChecked=""
-  />
-  <input type="hidden" name="subscribe" defaultValue="no" />
-  {/* radio button handle */}
-  <input type="radio" name="gender" defaultValue="male" defaultChecked="" />
-  <input type="radio" name="gender" defaultValue="female" />
-  <input type="radio" name="gender" defaultValue="other" />
-  {/* select field handle */}
-  <select name="work-experience">
-    <option value="one-year">0-1 years</option>
-    <option value="one-five-years">1-5 years</option>
-  </select>
-  <button type="submit">Send</button>
-</form>
-</div>
+  return (
+    <div className='h-screen flex flex-col bg-pink-400'>
+      <header className='w-full h-10 bg-white fixed top-0 left-0 shadow-md flex items-center justify-center gap-2 font-bold text-violet-950'>
+        <FaCat className="text-2xl" />DudaSys<FaCat className="text-2xl" />
+      </header>
+      <main className='flex-1 mt-8 flex items-center justify-center'>
+        <form
+          action="https://getform.io/f/bronjoqa"
+          method="POST"
+          className="bg-white p-5 rounded-xl shadow-md flex flex-col gap-4 min-w-[300px]"
+        >
+          <h2 className="text-xl font-bold text-center text-black mb-4">Entrar na sua conta</h2>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required
+            className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-violet-400"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Senha"
+            required
+            className="border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-violet-400"
+          />
+          <button
+            type="submit"
+            className="bg-violet-800 text-white py-2 rounded hover:bg-violet-700 transition"
+          >
+            Entrar
+          </button>
+        </form>
+      </main>
+    </div>
+  );
 }
 
 export default App
